@@ -16,31 +16,19 @@ function HomeScreen() {
         isLargeRow
       />
       <Row title="TRENDING NOW" fetchUrl={requests.fetchTrending} isLargeRow />
-      <Row
-        title="Action Movies"
-        fetchUrl={requests.fetchActionMovies}
-        isLargeRow
-      />
+      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
       <Row
         title="Comedy Movies"
         fetchUrl={requests.fetchComedyMovies}
         isLargeRow
       />
-      <Row
-        title="Horror Movies"
-        fetchUrl={requests.fetchHorrorMovies}
-        isLargeRow
-      />
+      <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
       <Row
         title="Romance Movies"
         fetchUrl={requests.fetchRomanceMovies}
         isLargeRow
       />
-      <Row
-        title="Documentaries"
-        fetchUrl={requests.fetchDocumentaries}
-        isLargeRow
-      />
+      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
     </div>
   );
 }

@@ -36,18 +36,20 @@ function Banner() {
         color: "#fff",
       }}
     >
-      <div class="banner__contents">
-        <h1 class="banner__title">
+      <div className="banner__contents">
+        <h1 className="banner__title">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
-        <div class="banner__buttons">
-          <button class="banner__button">Play</button>
-          <button class="banner__button">My List</button>
+        <div className="banner__buttons">
+          <button className="banner__button">Play</button>
+          <button className="banner__button">My List</button>
         </div>
-        <h1 class="banner__description">{truncate(movie?.overview, 150)}</h1>
+        <h1 className="banner__description">
+          {truncate(movie?.overview, 150)}
+        </h1>
       </div>
 
-      <div class="banner--fadeBottom" />
+      <div className="banner--fadeBottom" />
     </header>
   );
 }
