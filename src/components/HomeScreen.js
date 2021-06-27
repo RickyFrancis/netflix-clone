@@ -1,9 +1,9 @@
-import React from "react";
-import "../styles/HomeScreen.css";
-import Nav from "./Nav";
-import Banner from "./Banner";
-import Row from "./Row";
-import requests from "../Requests";
+import React from 'react';
+import '../styles/HomeScreen.css';
+import Nav from './Nav';
+import Banner from './Banner';
+import Row from './Row';
+import requests from '../Requests';
 
 function HomeScreen() {
   return (
@@ -15,20 +15,24 @@ function HomeScreen() {
         fetchUrl={requests.fetchNetflixOriginals}
         isLargeRow
       />
-      <Row title="TRENDING NOW" fetchUrl={requests.fetchTrending} isLargeRow />
-      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
+      <Row title="TRENDING NOW" fetchUrl={requests.fetchTrending} />
       <Row
-        title="Comedy Movies"
-        fetchUrl={requests.fetchComedyMovies}
+        title="Action Movies"
+        fetchUrl={requests.fetchActionMovies}
         isLargeRow
       />
-      <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
+      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
       <Row
-        title="Romance Movies"
-        fetchUrl={requests.fetchRomanceMovies}
+        title="Horror Movies"
+        fetchUrl={requests.fetchHorrorMovies}
         isLargeRow
       />
-      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
+      <Row
+        title="Documentaries"
+        fetchUrl={requests.fetchDocumentaries}
+        isLargeRow
+      />
     </div>
   );
 }
