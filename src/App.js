@@ -3,13 +3,18 @@ import { Counter } from "./features/counter/Counter";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
+import LoginScreen from "./screens/LoginScreen";
 
 function App() {
+  // const user = {
+  //   name: "Ricky",
+  // };
+  const user = null;
+
   return (
     <div className="app">
       <Router>
-        <Switch>
-          {/* <Route path="/about">
+        {/* <Route path="/about">
             <About />
           </Route>
           <Route path="/users">
@@ -18,10 +23,16 @@ function App() {
           <Route path="/about">
             <About />
           </Route> */}
-          <Route exact path="/">
-            <HomeScreen />
-          </Route>
-        </Switch>
+
+        {!user ? (
+          <LoginScreen />
+        ) : (
+          <Switch>
+            <Route exact path="/">
+              <HomeScreen />
+            </Route>
+          </Switch>
+        )}
       </Router>
     </div>
   );
