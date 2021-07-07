@@ -1,12 +1,10 @@
 {
-    "emmet.triggerExpansionOnTab": true,
-    "emmet.showSuggestionsAsSnippets": true,
-    "emmet.excludeLanguages": [
-    
-        "markdown"
-    ],
-    "emmet.includeLanguages": {
-        "javascript": "html"
-    },
-    "editor.wordWrap": "on"
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.excludeLanguages": ["markdown"],
+  "emmet.includeLanguages": {
+    "javascript": "html"
+  },
+  "editor.wordWrap": "on",
+  "emmet.preferences": {}
 }

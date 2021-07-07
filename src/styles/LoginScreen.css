@@ -1,7 +1,7 @@
 .loginScreen {
   position: relative;
   height: 100%;
-  background: url("https://assets.nflxext.com/ffe/siteui/vlv3/b8e09d9c-d1e7-4800-afd9-810e41ace684/a2a6c081-7681-46e2-b38d-c67b53ba6f2a/BD-en-20210607-popsignuptwoweeks-perspective_alpha_website_large.jpg")
+  background: url('https://assets.nflxext.com/ffe/siteui/vlv3/b8e09d9c-d1e7-4800-afd9-810e41ace684/a2a6c081-7681-46e2-b38d-c67b53ba6f2a/BD-en-20210607-popsignuptwoweeks-perspective_alpha_website_large.jpg')
     center no-repeat;
   background-size: cover;
 }

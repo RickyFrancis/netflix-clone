@@ -1,12 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
-
-const initialState = {
-  value: 0,
-  status: "idle",
-};
+import { createSlice } from '@reduxjs/toolkit';
 
 export const userSlice = createSlice({
-  name: "user",
+  name: 'user',
   initialState: {
     user: null,
   },

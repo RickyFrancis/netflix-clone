@@ -1,19 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from 'react';
 // import { Counter } from "./features/counter/Counter";
-import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import HomeScreen from "./screens/HomeScreen";
-import LoginScreen from "./screens/LoginScreen";
-import { auth } from "./firebase";
-import { useDispatch, useSelector } from "react-redux";
-import { login, logout, selectUser } from "./features/userSlice";
+import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { auth } from './firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout, selectUser } from './features/userSlice';
+
+import HomeScreen from './screens/HomeScreen';
+import LoginScreen from './screens/LoginScreen';
+import ProfileScreen from './screens/ProfileScreen';
+
+import Loader from './components/Loader';
 
 function App() {
-  // const user = {
-  //   name: "Ricky",
-  // };
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {
@@ -26,9 +28,11 @@ function App() {
             email: userAuth.email,
           })
         );
+        setLoading(false);
       } else {
         // Logged out
-        dispatch(logout);
+        dispatch(logout());
+        setLoading(false);
       }
     });
 
@@ -38,20 +42,15 @@ function App() {
   return (
     <div className="app">
       <Router>
-        {/* <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route> */}
-
-        {!user ? (
+        {loading ? (
+          <Loader />
+        ) : !user ? (
           <LoginScreen />
         ) : (
           <Switch>
+            <Route path="/profile">
+              <ProfileScreen />
+            </Route>
             <Route exact path="/">
               <HomeScreen />
             </Route>
